@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Listener\eventDispatcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sceneElementManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_impl_dx11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_impl_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Listener\eventDispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Listener\IWindowListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sceneElementManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_dx11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_win32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_textedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_rectpack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_truetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\hologram\hologramPS.hlsl" />
+    <FxCompile Include="Shaders\hologram\hologramVS.hlsl" />
+    <FxCompile Include="Shaders\colorNormalVisualization\normalVisPS.hlsl" />
+    <FxCompile Include="Shaders\colorNormalVisualization\normalVisVS.hlsl" />
+    <FxCompile Include="Shaders\hologram\hologramGS.hlsl" />
+    <FxCompile Include="Shaders\hologram\distortion.hlsl" />
+    <FxCompile Include="Shaders\hologram\hologramHS.hlsl" />
+    <FxCompile Include="Shaders\hologram\hologramDS.hlsl" />
+    <FxCompile Include="Shaders\lineNormalVisualization\lineNormalVisualizationVS.hlsl" />
+    <FxCompile Include="Shaders\lineNormalVisualization\lineNormalVisualizationPS.hlsl" />
+    <FxCompile Include="Shaders\lineNormalVisualization\lineNormalVisualizationGS.hlsl" />
+    <FxCompile Include="Shaders\sky\skyVS.hlsl" />
+    <FxCompile Include="Shaders\sky\skyPS.hlsl" />
+    <FxCompile Include="Shaders\textureOnly\textureOnlyPS.hlsl" />
+    <FxCompile Include="Shaders\textureOnly\textureOnlyVS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\postProcessVS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\postProcessPS.hlsl" />
+    <FxCompile Include="Shaders\lit\litPS.hlsl" />
+    <FxCompile Include="Shaders\lit\litVS.hlsl" />
+    <FxCompile Include="Shaders\emissionOnly\emissionOnlyVS.hlsl" />
+    <FxCompile Include="Shaders\emissionOnly\emissionOnlyPS.hlsl" />
+    <FxCompile Include="Shaders\reflectionCapture\reflectionCaptureDiffuseVS.hlsl" />
+    <FxCompile Include="Shaders\reflectionCapture\reflectionCaptureDiffusePS.hlsl" />
+    <FxCompile Include="Shaders\reflectionCapture\reflectionCaptureSpecularVS.hlsl" />
+    <FxCompile Include="Shaders\reflectionCapture\reflectionCaptureSpecularPS.hlsl" />
+    <FxCompile Include="Shaders\reflectionCapture\reflectionCaptureFactorPS.hlsl" />
+    <FxCompile Include="Shaders\reflectionCapture\reflectionCaptureFactorVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapGS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DhologramVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DhologramGS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DhologramDS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DhologramHS.hlsl" />
+    <FxCompile Include="Shaders\depth\distortion.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemaphologramVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemaphologramHS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemaphologramGS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemaphologramDS.hlsl" />
+    <FxCompile Include="Shaders\dissolution\dissolutionPS.hlsl" />
+    <FxCompile Include="Shaders\dissolution\dissolutionVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DdissolutionPS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapdissolutionPS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DdissolutionVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapdissolutionGS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapdissolutionVS.hlsl" />
+    <FxCompile Include="Shaders\particle\particleVS.hlsl" />
+    <FxCompile Include="Shaders\particle\particlePS.hlsl" />
+    <FxCompile Include="Shaders\colorNormalVisualization\normalVisStencilVS.hlsl" />
+    <FxCompile Include="Shaders\dissolution\dissolutionStencilVS.hlsl" />
+    <FxCompile Include="Shaders\emissionOnly\emissionOnlyStencilVS.hlsl" />
+    <FxCompile Include="Shaders\hologram\hologramStencilGS.hlsl" />
+    <FxCompile Include="Shaders\lit\litStencilVS.hlsl" />
+    <FxCompile Include="Shaders\textureOnly\textureOnlyStencilVS.hlsl" />
+    <FxCompile Include="Shaders\colorNormalVisualization\normalVisGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\dissolution\dissolutionGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\hologram\hologramGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\lit\litGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\textureOnly\textureOnlyGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\emissionOnly\emissionOnlyGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\GBuffer\gbufferLightingVS.hlsl" />
+    <FxCompile Include="Shaders\GBuffer\gbufferPBRLightingPS.hlsl" />
+    <FxCompile Include="Shaders\GBuffer\gbufferNoLightingPS.hlsl" />
+    <FxCompile Include="Shaders\decals\decalVS.hlsl" />
+    <FxCompile Include="Shaders\decals\decalPS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\fxaaVS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\fxaaPS.hlsl" />
+    <FxCompile Include="Shaders\dissolution\dissolutionStencilPS.hlsl" />
+    <FxCompile Include="Shaders\incineration\incinerationStencilVS.hlsl" />
+    <FxCompile Include="Shaders\incineration\incinerationStencilPS.hlsl" />
+    <FxCompile Include="Shaders\incineration\incinerationVS.hlsl" />
+    <FxCompile Include="Shaders\incineration\incinerationGBufferPS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DincinerationVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depth2DincinerationPS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapIncinerationVS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapIncinerationPS.hlsl" />
+    <FxCompile Include="Shaders\depth\depthCubemapIncinerationGS.hlsl" />
+    <FxCompile Include="Shaders\particle\gpuParticleDataUpdateCS.hlsl" />
+    <FxCompile Include="Shaders\particle\gpuParticleRangeUpdateCS.hlsl" />
+    <FxCompile Include="Shaders\particle\gpuParticleVS.hlsl" />
+    <FxCompile Include="Shaders\particle\gpuParticlePS.hlsl" />
+    <FxCompile Include="Shaders\particle\gpuParticleSphereVS.hlsl" />
+    <FxCompile Include="Shaders\particle\gpuParticleSpherePS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\bloomVS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\bloomDownsamplePS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\bloomUpsamplePS.hlsl" />
+    <FxCompile Include="Shaders\postProcess\bloomFinalPS.hlsl" />
+    <FxCompile Include="Shaders\fog\fogVS.hlsl" />
+    <FxCompile Include="Shaders\fog\fogPS.hlsl" />
+    <FxCompile Include="Shaders\fog\volumetricFogVS.hlsl" />
+    <FxCompile Include="Shaders\fog\volumetricFogPS.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\postProcess\Fxaa3_11.hlsl" />
+    <None Include="Shaders\fog\fog.hlsl" />
+  </ItemGroup>
+</Project>

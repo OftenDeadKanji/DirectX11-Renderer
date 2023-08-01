@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7b99d422-4257-4f91-b033-45a29eceb635}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)bin-int\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)bin-int\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);OUT_DIR=R"($(SolutionDir))";_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\dependencies\assimp\;$(ProjectDir)src\dependencies\Eigen\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;zlibstaticd.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)src\dependencies\assimp\lib\debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <FxCompile>
+      <VariableName>g_%(Filename)</VariableName>
+    </FxCompile>
+    <FxCompile>
+      <HeaderFileOutput>$(OutDir)%(Filename).h</HeaderFileOutput>
+    </FxCompile>
+    <FxCompile>
+      <ObjectFileOutput />
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);;OUT_DIR=R"($(SolutionDir))";_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\dependencies\assimp\;$(ProjectDir)src\dependencies\Eigen\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;zlibstatic.lib;assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)src\dependencies\assimp\lib\release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <FxCompile>
+      <VariableName>g_%(Filename)</VariableName>
+    </FxCompile>
+    <FxCompile>
+      <HeaderFileOutput>$(OutDir)%(Filename).h</HeaderFileOutput>
+    </FxCompile>
+    <FxCompile>
+      <ObjectFileOutput />
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\dependencies\sivPerlinNoise.h" />
+    <ClInclude Include="src\render\fogRenderer\fogRenderer.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\incinerationInstances.h" />
+    <ClInclude Include="src\render\decalSystem\decalSystem.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\dissolutionInstances.h" />
+    <ClInclude Include="src\render\particleSystem\particle.h" />
+    <ClInclude Include="src\render\particleSystem\particleEmitter.h" />
+    <ClInclude Include="src\render\particleSystem\particleSystem.h" />
+    <ClInclude Include="src\render\reflectionCapture\reflectionCapture.h" />
+    <ClInclude Include="src\render\lightSystem\lightSystem.h" />
+    <ClInclude Include="src\objectMover\meshInstanceMover.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\emissionOnlyInstances.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\shadingGroup.h" />
+    <ClInclude Include="src\render\postProcess\postProcess.h" />
+    <ClInclude Include="src\render\skyRenderer\skyRenderer.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\litInstances.h" />
+    <ClInclude Include="src\utils\containers\solidVector.h" />
+    <ClInclude Include="src\utils\debug\debugOutput.h" />
+    <ClInclude Include="src\engine\renderer.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\normalVisInstances.h" />
+    <ClInclude Include="src\render\meshSystem\meshSystem.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\hologramInstances.h" />
+    <ClInclude Include="src\render\meshSystem\mesh\model.h" />
+    <ClInclude Include="src\resourcesManagers\modelManager.h" />
+    <ClInclude Include="src\engine\engine.h" />
+    <ClInclude Include="src\math\vertex.h" />
+    <ClInclude Include="src\render\Direct3d\d3d.h" />
+    <ClInclude Include="src\dependencies\Windows\win.h" />
+    <ClInclude Include="src\dependencies\Windows\win_def.h" />
+    <ClInclude Include="src\dependencies\Windows\win_undef.h" />
+    <ClInclude Include="src\math\angles.h" />
+    <ClInclude Include="src\render\Direct3d\DxRes.h" />
+    <ClInclude Include="src\render\lights\lighting.h" />
+    <ClInclude Include="src\render\lights\spotLight.h" />
+    <ClInclude Include="src\math\box.h" />
+    <ClInclude Include="src\math\plane.h" />
+    <ClInclude Include="src\render\meshSystem\mesh\triangleOctree.h" />
+    <ClInclude Include="src\objectMover\IObjectMover.h" />
+    <ClInclude Include="src\objectMover\lightVisualizerMover.h" />
+    <ClInclude Include="src\objectMover\planeMover.h" />
+    <ClInclude Include="src\objectMover\sphereMover.h" />
+    <ClInclude Include="src\objectMover\matrixMover.h" />
+    <ClInclude Include="src\render\shader\shader.h" />
+    <ClInclude Include="src\render\scene\transform.h" />
+    <ClInclude Include="src\math\triangle.h" />
+    <ClInclude Include="src\render\lights\pointLight.h" />
+    <ClInclude Include="src\math\mathUtils.h" />
+    <ClInclude Include="src\render\camera\camera.h" />
+    <ClInclude Include="src\render\meshSystem\mesh\mesh.h" />
+    <ClInclude Include="src\utils\assert.h" />
+    <ClInclude Include="src\utils\nonCopyable.h" />
+    <ClInclude Include="src\utils\parallelExecutor.h" />
+    <ClInclude Include="src\math\intersection.h" />
+    <ClInclude Include="src\math\ray.h" />
+    <ClInclude Include="src\math\sphere.h" />
+    <ClInclude Include="src\render\lights\directionalLight.h" />
+    <ClInclude Include="src\render\lights\light.h" />
+    <ClInclude Include="src\render\material\material.h" />
+    <ClInclude Include="src\render\scene\scene.h" />
+    <ClInclude Include="src\utils\FPSTimer.h" />
+    <ClInclude Include="src\utils\random\random.h" />
+    <ClInclude Include="src\utils\sorting\radixSort.h" />
+    <ClInclude Include="src\window\window.h" />
+    <ClInclude Include="src\render\Direct3d\buffer.h" />
+    <ClInclude Include="src\resourcesManagers\textureManager.h" />
+    <ClInclude Include="src\render\texture\texture.h" />
+    <ClInclude Include="src\render\meshSystem\ShadingGroups\textureOnlyInstances.h" />
+    <ClInclude Include="src\transformSystem\transformSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\render\fogRenderer\fogRenderer.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\incinerationInstances.cpp" />
+    <ClCompile Include="src\render\decalSystem\decalSystem.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\dissolutionInstances.cpp" />
+    <ClCompile Include="src\render\particleSystem\particleEmitter.cpp" />
+    <ClCompile Include="src\render\particleSystem\particleSystem.cpp" />
+    <ClCompile Include="src\render\reflectionCapture\reflectionCapture.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\BC.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\BC4BC5.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\BC6HBC7.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\BCDirectCompute.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexCompress.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexCompressGPU.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexConvert.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexD3D11.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexDDS.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexImage.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexMipmaps.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DirectXTexUtil.cpp" />
+    <ClCompile Include="src\render\lightSystem\lightSystem.cpp" />
+    <ClCompile Include="src\dependencies\DirectXTex\DirectXTex\DDSTextureLoader11.cpp" />
+    <ClCompile Include="src\objectMover\meshInstanceMover.cpp" />
+    <ClCompile Include="src\engine\renderer.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\emissionOnlyInstances.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\normalVisInstances.cpp" />
+    <ClCompile Include="src\render\meshSystem\meshSystem.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\hologramInstances.cpp" />
+    <ClCompile Include="src\render\meshSystem\mesh\model.cpp" />
+    <ClCompile Include="src\render\postProcess\postProcess.cpp" />
+    <ClCompile Include="src\render\skyRenderer\skyRenderer.cpp" />
+    <ClCompile Include="src\resourcesManagers\modelManager.cpp" />
+    <ClCompile Include="src\engine\engine.cpp" />
+    <ClCompile Include="src\math\box.cpp" />
+    <ClCompile Include="src\render\Direct3d\d3d.cpp" />
+    <ClCompile Include="src\render\lights\lighting.cpp" />
+    <ClCompile Include="src\math\plane.cpp" />
+    <ClCompile Include="src\math\triangle.cpp" />
+    <ClCompile Include="src\math\mathUtils.cpp" />
+    <ClCompile Include="src\math\sphere.cpp" />
+    <ClCompile Include="src\render\camera\camera.cpp" />
+    <ClCompile Include="src\render\meshSystem\mesh\mesh.cpp" />
+    <ClCompile Include="src\render\meshSystem\mesh\triangleOctree.cpp" />
+    <ClCompile Include="src\render\scene\sceneObjects\lightVisualizer.cpp" />
+    <ClCompile Include="src\render\scene\sceneObjects\meshInstance.cpp" />
+    <ClCompile Include="src\objectMover\lightVisualizerMover.cpp" />
+    <ClCompile Include="src\objectMover\planeMover.cpp" />
+    <ClCompile Include="src\objectMover\sphereMover.cpp" />
+    <ClCompile Include="src\objectMover\matrixMover.cpp" />
+    <ClCompile Include="src\render\scene\sceneObjects\planeObject.cpp" />
+    <ClCompile Include="src\render\scene\sceneObjects\sphereObject.cpp" />
+    <ClCompile Include="src\render\scene\scene.cpp" />
+    <ClCompile Include="src\render\shader\shader.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\litInstances.cpp" />
+    <ClCompile Include="src\utils\FPSTimer.cpp" />
+    <ClCompile Include="src\utils\parallelExecutor.cpp" />
+    <ClCompile Include="src\utils\random\random.cpp" />
+    <ClCompile Include="src\utils\sorting\radixSort.cpp" />
+    <ClCompile Include="src\window\window.cpp" />
+    <ClCompile Include="src\resourcesManagers\textureManager.cpp" />
+    <ClCompile Include="src\render\texture\texture.cpp" />
+    <ClCompile Include="src\render\meshSystem\ShadingGroups\textureOnlyInstances.cpp" />
+    <ClCompile Include="src\transformSystem\transformSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\dependencies\assimp\licence\LICENCE" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
